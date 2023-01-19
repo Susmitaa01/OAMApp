@@ -1,0 +1,254 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Online Admission System</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#addBranch"
+          type="submit"
+        >
+          Add Branch
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Branch ID</th>
+        <th scope="col">Branch Description</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">College Reg ID</th>
+        <th scope="col">Course ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let branch of branchList">
+        <td>{{ branch.branchId }}</td>
+        <td>{{ branch.branchDescription }}</td>
+        <td>{{ branch.branchName }}</td>
+        <!-- <td>{{ course.collegeRegId }}</td> -->
+        <td>{{ branch.collegeRegId }}</td>
+        <td>{{ branch.courseId }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-primary me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#editBranch"
+            (click)="editBranch(branch)"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            (click)="deleteBranch(branch)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Add Course modal -->
+  <div
+    class="modal fade"
+    id="addBranch"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Branch</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="branchDetail">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >branchDescription
+              </label>
+              <input
+                type="text"
+                formControlName="branchDescription"
+                class="form-control"
+                id="branchDescription"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >branchName</label
+              >
+              <input
+                type="text"
+                formControlName="branchName"
+                class="form-control"
+                id="branch"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >collegeRegId</label
+              >
+              <input
+                type="text"
+                formControlName="collegeRegId"
+                class="form-control"
+                id="collegeRegId"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >courseId
+              </label>
+              <input
+                type="text"
+                formControlName="courseId"
+                class="form-control"
+                id="courseId"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                (click)="addBranch()"
+              >
+                Add Branch
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Course modal -->
+  <div
+    class="modal fade"
+    id="editBranch"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Edit Branch details
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="branchDetail">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >branchDescription
+              </label>
+              <input
+                type="text"
+                formControlName="branchDescription"
+                class="form-control"
+                id="branchDescription"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >branchName
+              </label>
+              <input
+                type="text"
+                formControlName="branchName"
+                class="form-control"
+                id="branchName"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >collegeRegId
+              </label>
+              <input
+                type="text"
+                formControlName="collegeRegId"
+                class="form-control"
+                id="collegeRegId"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >courseId
+              </label>
+              <input
+                type="text"
+                formControlName="courseId"
+                class="form-control"
+                id="courseId"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                (click)="updateBranch()"
+                data-bs-dismiss="modal"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

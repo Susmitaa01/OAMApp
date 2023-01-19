@@ -1,0 +1,99 @@
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card">
+
+                <div class="text-center">
+
+                    <h1>Sign Up</h1>
+
+                    <h6>Register Yourself
+
+                    </h6>
+
+                </div>
+
+                <form>
+
+                    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+
+                        <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>Full Name</h6></label>
+
+                            <input formControlName="fullname" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the fullname"><br>
+
+
+                          </div>
+
+                         
+                          <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>Email</h6></label>
+  
+                            <input formControlName="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter the personal email">
+  
+                          </div>
+                          
+                          
+                          
+
+                          <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>Password</h6></label>
+  
+                            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter the strong password">
+  
+                          </div>
+
+                          <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>Mobile Number</h6></label>
+
+                            <input formControlName="mobile" type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter the MobileNo." >
+
+                          </div>
+
+                          
+
+                          <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>AadharCardNumber</h6></label>
+
+                            <input formControlName="aadharCardNumber" type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter the aadhar card no.">
+                            
+
+                          </div>
+                          
+
+                        <div class="mb-3">
+
+                          <label for="exampleInputPassword1" class="form-label"><h6>Role</h6></label>
+
+                          <input formControlName="role" type="text" class="form-control" id="exampleInputPassword1" placeholder="Type as Admin or User">
+
+                        </div>
+
+          
+
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+
+                      </form>
+
+                </form>
+
+                <a style="color:rgb(61, 17, 58);" routerLink="/login"><h5>Already registered? Click to login</h5></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

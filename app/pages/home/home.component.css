@@ -1,0 +1,16 @@
+.banner
+{
+    background-image: url('../../../assets/Images/homePage.jpg');
+    height: 600px;
+    background-position: center top;
+    background-size: cover;
+}
+.section-heading{
+font-style: sans-serif;
+color: rgb(255, 185, 127);
+}
+.section-subheading{
+    font-style: italic;
+    color: rgb(180, 99, 33);
+    font-size: large;
+}

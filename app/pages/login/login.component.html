@@ -1,0 +1,79 @@
+<!-- <div class="container">
+
+    <div class="row"> -->
+<!-- <div class="banner"> -->
+        <div class="col-md-1">
+
+            <div class="card">
+
+                <div class="text-center">
+
+                    <h1>Login</h1>
+
+                    <h6>Please enter email and password!!
+
+                    </h6>
+
+                </div>
+
+                <form>
+
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                        <div class="mb-3">
+
+
+
+                            <label for="exampleInputEmail1" class="form-label"><h6>Email</h6></label>
+  
+  
+  
+                            <input formControllerName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the email" >
+  
+  
+  
+                            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small><br>
+  
+                            <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is required</span>
+  
+                           
+  
+  
+  
+                          </div>
+                        
+                        <div class="mb-3">
+
+                          <label for="exampleInputPassword1" class="form-label"><h6>Password</h6></label>
+
+                          <input formControllerName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password"><br>
+                          <span class="text-danger"*ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password must be required</span>
+                           
+                        </div>
+                       
+
+                        <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label"><h6>Role</h6></label>
+  
+                            <input formControlName="role" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the role"><br>
+                            <span class="text-danger"*ngIf="loginForm.controls['role'].dirty && loginForm.hasError('required','role')">*Role Id is required</span>
+  
+                          </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                      </form>
+
+                </form>
+
+                <a style="color:rgb(100, 30, 9);" routerLink="/signup"><h5>New User? Click to signup!!</h5></a>
+
+            </div>
+
+        </div>
+
+    <!-- </div> -->
+
+
+
